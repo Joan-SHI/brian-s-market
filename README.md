@@ -1,4 +1,4 @@
-# Boilerplate: Knex.js
+# Joans Personal Project
 
 Phase 1 boilerplate project with:
 
