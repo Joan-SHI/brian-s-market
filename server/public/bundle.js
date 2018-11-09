@@ -23553,21 +23553,447 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Header = __webpack_require__(18);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Table = __webpack_require__(19);
+
+var _Table2 = _interopRequireDefault(_Table);
+
+var _Guide = __webpack_require__(20);
+
+var _Guide2 = _interopRequireDefault(_Guide);
+
+var _Marketinfo = __webpack_require__(21);
+
+var _Marketinfo2 = _interopRequireDefault(_Marketinfo);
+
+var _Market = __webpack_require__(22);
+
+var _Market2 = _interopRequireDefault(_Market);
+
+var _Nav = __webpack_require__(23);
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App(props) {
+    _classCallCheck(this, App);
+
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.state = {
+      showMarket: false
+    };
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
+  }
+
+  _createClass(App, [{
+    key: 'handleClick',
+    value: function handleClick() {
+      this.setState({
+        showMarket: !this.state.showMarket
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'container' },
+        _react2.default.createElement(_Nav2.default, null),
+        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_Table2.default, null),
+        _react2.default.createElement(_Guide2.default, null),
+        _react2.default.createElement(_Marketinfo2.default, { click: this.handleClick }),
+        this.state.showMarket && _react2.default.createElement(_Market2.default, null)
+      );
+    }
+  }]);
+
+  return App;
+}(_react2.default.Component);
+
+exports.default = App;
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var App = function App() {
+var Header = function Header() {
   return _react2.default.createElement(
-    'h1',
-    null,
-    'React development hasssss begun!'
+    "h1",
+    { "class": " text-center" },
+    "Rates To Rent"
   );
 };
 
-exports.default = App;
+exports.default = Header;
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Table = function Table() {
+  return _react2.default.createElement(
+    "table",
+    { "class": "table", style: { width: "100%" } },
+    _react2.default.createElement(
+      "thead",
+      { "class": "thead-dark" },
+      _react2.default.createElement(
+        "tr",
+        null,
+        _react2.default.createElement(
+          "th",
+          { scope: "col" },
+          "Area"
+        ),
+        _react2.default.createElement(
+          "th",
+          { scope: "col" },
+          "Rent"
+        ),
+        _react2.default.createElement(
+          "th",
+          { scope: "col" },
+          "Bank Rate"
+        ),
+        _react2.default.createElement(
+          "th",
+          { scope: "col" },
+          "Influence"
+        )
+      )
+    ),
+    _react2.default.createElement(
+      "tbody",
+      null,
+      _react2.default.createElement(
+        "tr",
+        null,
+        _react2.default.createElement(
+          "td",
+          null,
+          "Newlands"
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          "1,000"
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          "3"
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          "10"
+        )
+      ),
+      _react2.default.createElement(
+        "tr",
+        null,
+        _react2.default.createElement(
+          "td",
+          null,
+          "Khandallah"
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          "500"
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          "7"
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          "80"
+        )
+      ),
+      _react2.default.createElement(
+        "tr",
+        null,
+        _react2.default.createElement(
+          "td",
+          null,
+          "Wellington CBD"
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          "1500"
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          "1"
+        ),
+        _react2.default.createElement(
+          "td",
+          null,
+          "50"
+        )
+      )
+    )
+  );
+};
+
+exports.default = Table;
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Guide = function Guide() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Guide'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'If rate is positive, charge tennants more'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'If negative, you\'re already profiting'
+    )
+  );
+};
+
+exports.default = Guide;
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Marketinfo = function Marketinfo(props) {
+  return _react2.default.createElement(
+    "div",
+    { id: "market" },
+    _react2.default.createElement(
+      "h1",
+      null,
+      "Market Info"
+    ),
+    _react2.default.createElement(
+      "button",
+      { "class": "btn btn-warning", onClick: props.click },
+      "Toggle Market Info"
+    ),
+    _react2.default.createElement(
+      "a",
+      { href: "#" },
+      "Top of page"
+    )
+  );
+};
+
+exports.default = Marketinfo;
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Market = function Market() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Market'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'If rate is positive, charge tennants more'
+    ),
+    _react2.default.createElement(
+      'p',
+      null,
+      'If negative, you\'re already profiting'
+    )
+  );
+};
+
+exports.default = Market;
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Nav = function Nav() {
+  return _react2.default.createElement(
+    "nav",
+    { "class": "navbar navbar-expand-lg navbar-light bg-light" },
+    _react2.default.createElement(
+      "a",
+      { "class": "navbar-brand", href: "#" },
+      "Market Rates"
+    ),
+    _react2.default.createElement(
+      "button",
+      { "class": "navbar-toggler", type: "button", "data-toggle": "collapse", "data-target": "#navbarText", "aria-controls": "navbarText", "aria-expanded": "false", "aria-label": "Toggle navigation" },
+      _react2.default.createElement("span", { "class": "navbar-toggler-icon" })
+    ),
+    _react2.default.createElement(
+      "div",
+      { "class": "collapse navbar-collapse", id: "navbarText" },
+      _react2.default.createElement(
+        "ul",
+        { "class": "navbar-nav mr-auto" },
+        _react2.default.createElement(
+          "li",
+          { "class": "nav-item active" },
+          _react2.default.createElement(
+            "a",
+            { "class": "nav-link", href: "https://www.google.co.nz" },
+            "Home ",
+            _react2.default.createElement(
+              "span",
+              { "class": "sr-only" },
+              "(current)"
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          { "class": "nav-item" },
+          _react2.default.createElement(
+            "a",
+            { "class": "nav-link", href: "#market" },
+            "Market Info"
+          )
+        ),
+        _react2.default.createElement(
+          "li",
+          { "class": "nav-item" },
+          _react2.default.createElement(
+            "a",
+            { "class": "nav-link", href: "#" },
+            "Contact"
+          )
+        )
+      ),
+      _react2.default.createElement(
+        "span",
+        { "class": "navbar-text" },
+        "Joans Market App          "
+      )
+    )
+  );
+};
+
+exports.default = Nav;
 
 /***/ })
 /******/ ]);
