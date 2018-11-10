@@ -1,24 +1,20 @@
 # Joans Personal Project
 
-Phase 1 boilerplate project with:
-
+Goal:
+Use
  - Express
  - Knex
+ - Database
  - SQLite3
- - Express Handlebars
- - body-parser
- - Jest
- - nodemon
+ - React
+ - API
+ in my personal project so I have better understanding about them. This project will show Wellingtian landlords and tenants how the bank rates influences the market rent so they can make decisions more rationally and have a happy ending:) 
 
+To do:
 
-## Install
+Explore React;
+Once I get my API approvals from MBIE and ASB, apply them in database.
 
-```
-yarn
-yarn knex migrate:latest
-yarn knex seed:run
-yarn dev
-```
-
-Be sure to check out the other npm scripts too.
+Strectch Goal:
+Read some articles about the factors which affect Market-rent. To see whehter I could introduce more types of API into database. 
 
