@@ -23629,7 +23629,7 @@ var App = function (_React$Component) {
 
     _this.state = {
       showMarket: false,
-      rentPrice: "---"
+      rentPrice: "___"
     };
     _this.handleClick = _this.handleClick.bind(_this);
     _this.updateMarketRent = _this.updateMarketRent.bind(_this);
@@ -23721,7 +23721,7 @@ var Header = function Header() {
   return _react2.default.createElement(
     "h1",
     { "class": " text-center" },
-    "Rates To Rent"
+    "Rate To Rent"
   );
 };
 
@@ -23785,22 +23785,22 @@ var Table = function Table() {
         _react2.default.createElement(
           "td",
           null,
-          "Newlands"
+          "Wadestown"
         ),
         _react2.default.createElement(
           "td",
           null,
-          "1,000"
+          "555"
         ),
         _react2.default.createElement(
           "td",
           null,
-          "3"
+          "--"
         ),
         _react2.default.createElement(
           "td",
           null,
-          "10"
+          "--"
         )
       ),
       _react2.default.createElement(
@@ -23809,22 +23809,22 @@ var Table = function Table() {
         _react2.default.createElement(
           "td",
           null,
-          "Khandallah"
+          "Raroa"
         ),
         _react2.default.createElement(
           "td",
           null,
-          "500"
+          "520"
         ),
         _react2.default.createElement(
           "td",
           null,
-          "7"
+          "--"
         ),
         _react2.default.createElement(
           "td",
           null,
-          "80"
+          "--"
         )
       ),
       _react2.default.createElement(
@@ -23833,22 +23833,22 @@ var Table = function Table() {
         _react2.default.createElement(
           "td",
           null,
-          "Wellington CBD"
+          "Kelburn"
         ),
         _react2.default.createElement(
           "td",
           null,
-          "1500"
+          "633"
         ),
         _react2.default.createElement(
           "td",
           null,
-          "1"
+          "--"
         ),
         _react2.default.createElement(
           "td",
           null,
-          "50"
+          "--"
         )
       )
     )
@@ -23886,7 +23886,7 @@ var Guide = function Guide() {
     _react2.default.createElement(
       'p',
       null,
-      'If rate is positive, charge tennants more'
+      'If rate is positive , charge tennants more'
     ),
     _react2.default.createElement(
       'p',
@@ -24004,7 +24004,7 @@ var Nav = function Nav() {
     _react2.default.createElement(
       "a",
       { className: "navbar-brand", href: "#" },
-      "Market Rates"
+      "Market Rate"
     ),
     _react2.default.createElement(
       "a",
@@ -24172,7 +24172,7 @@ function getMarketRent(suburbName) {
 
         // console.log("got request answer")
         var marketRent = res.body;
-        // console.log('market is :', marketRent)
+        console.log('market is :', marketRent);
         return marketRent;
     });
 }

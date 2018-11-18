@@ -8,7 +8,7 @@ export function getMarketRent (suburbName) {
 
             // console.log("got request answer")
             let marketRent = res.body
-            // console.log('market is :', marketRent)
+             console.log('market is :', marketRent)
             return marketRent 
         })
 }

@@ -14,23 +14,23 @@ const Table = () => {
     </thead>
     <tbody>
     <tr>
-      <td>Newlands</td>
-      <td>1,000</td>
-      <td>3</td>
-      <td>10</td>
+      <td>Wadestown</td>
+      <td>555</td>
+      <td>--</td>
+      <td>--</td>
 
     </tr>
     <tr>
-      <td>Khandallah</td>
-      <td>500</td>
-      <td>7</td>
-      <td>80</td>
+      <td>Raroa</td>
+      <td>520</td>
+      <td>--</td>
+      <td>--</td>
     </tr>
     <tr>
-      <td>Wellington CBD</td>
-      <td>1500</td>
-      <td>1</td>
-      <td>50</td>
+      <td>Kelburn</td>
+      <td>633</td>
+      <td>--</td>
+      <td>--</td>
     </tr>
    
     </tbody>

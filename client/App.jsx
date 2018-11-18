@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       showMarket: false,
-      rentPrice: "---"
+      rentPrice: "___"
     }
     this.handleClick = this.handleClick.bind(this)
     this.updateMarketRent = this.updateMarketRent.bind(this)
