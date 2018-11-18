@@ -4,7 +4,8 @@ class MarketRent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            area: undefined
+            area: undefined,
+            MarketRent: props.MarketRent
         }
 this.handleChange = this.handleChange.bind(this)
 
@@ -17,7 +18,7 @@ handleChange(event) {
 render() {
     return (
         <div>
-          <form onSubmit={(e) => {e.preventDefault(); this.props.MarketRent(this.state.area)}}>
+          <form onSubmit={(e) => {e.preventDefault(); this.state.MarketRent(this.state.area)}}>
           <input type="text" name="area" placeholder="Area" onChange={this.handleChange} />
           <button className="formbtn"><span>Get Market Rent</span></button>
           </form>

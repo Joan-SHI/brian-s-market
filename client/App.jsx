@@ -13,23 +13,38 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      showMarket: false
+      showMarket: false,
+      rentPrice: "---"
     }
     this.handleClick = this.handleClick.bind(this)
+    this.updateMarketRent = this.updateMarketRent.bind(this)
+  }
+
+  updateMarketRent(suburbName){
+
+    getMarketRent(suburbName)
+       .then(marketRent => {
+    
+        // console.log(marketRent.items)
+    
+        this.setState({
+          rentPrice: marketRent.items.med
+        })
+      })
   }
 
   componentDidMount() {
-    getMarketRent()
-      .then(marketRent => {
-        console.log('marketRent is', marketRent)
+    // getMarketRent()
+    //   .then(marketRent => {
+    //     console.log('marketRent is', marketRent)
 
-        // TODO this.setState
-        this.setState({
-          error: err,
-          marketRent: {}
+    //     // TODO this.setState
+    //     this.setState({
+    //       error: err,
+    //       marketRent: {}
 
-        })
-      })
+    //     })
+    //   })
   }
 
   handleClick() {
@@ -44,9 +59,10 @@ class App extends React.Component {
         <Nav />
         <Header />
         <Table />
+        <h2>The Market Rent Rate Is {this.state.rentPrice}</h2>
+        <MarketRent MarketRent={this.updateMarketRent}/>
         <Guide />
-        <MarketRent />
-        <Marketinfo click={this.handleClick} />
+     <Marketinfo click={this.handleClick} />
         {this.state.showMarket &&
           <Market />
         }

@@ -23605,11 +23605,11 @@ var _Nav = __webpack_require__(24);
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
-var _MarketRent = __webpack_require__(32);
+var _MarketRent = __webpack_require__(25);
 
 var _MarketRent2 = _interopRequireDefault(_MarketRent);
 
-var _api = __webpack_require__(25);
+var _api = __webpack_require__(26);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23628,27 +23628,42 @@ var App = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
     _this.state = {
-      showMarket: false
+      showMarket: false,
+      rentPrice: "---"
     };
     _this.handleClick = _this.handleClick.bind(_this);
+    _this.updateMarketRent = _this.updateMarketRent.bind(_this);
     return _this;
   }
 
   _createClass(App, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
+    key: 'updateMarketRent',
+    value: function updateMarketRent(suburbName) {
       var _this2 = this;
 
-      (0, _api.getMarketRent)().then(function (marketRent) {
-        console.log('marketRent is', marketRent);
+      (0, _api.getMarketRent)(suburbName).then(function (marketRent) {
 
-        // TODO this.setState
+        // console.log(marketRent.items)
+
         _this2.setState({
-          error: err,
-          marketRent: {}
-
+          rentPrice: marketRent.items.med
         });
       });
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      // getMarketRent()
+      //   .then(marketRent => {
+      //     console.log('marketRent is', marketRent)
+
+      //     // TODO this.setState
+      //     this.setState({
+      //       error: err,
+      //       marketRent: {}
+
+      //     })
+      //   })
     }
   }, {
     key: 'handleClick',
@@ -23666,8 +23681,14 @@ var App = function (_React$Component) {
         _react2.default.createElement(_Nav2.default, null),
         _react2.default.createElement(_Header2.default, null),
         _react2.default.createElement(_Table2.default, null),
+        _react2.default.createElement(
+          'h2',
+          null,
+          'The Market Rent Rate Is ',
+          this.state.rentPrice
+        ),
+        _react2.default.createElement(_MarketRent2.default, { MarketRent: this.updateMarketRent }),
         _react2.default.createElement(_Guide2.default, null),
-        _react2.default.createElement(_MarketRent2.default, null),
         _react2.default.createElement(_Marketinfo2.default, { click: this.handleClick }),
         this.state.showMarket && _react2.default.createElement(_Market2.default, null)
       );
@@ -24055,21 +24076,103 @@ exports.default = Nav;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MarketRent = function (_React$Component) {
+    _inherits(MarketRent, _React$Component);
+
+    function MarketRent(props) {
+        _classCallCheck(this, MarketRent);
+
+        var _this = _possibleConstructorReturn(this, (MarketRent.__proto__ || Object.getPrototypeOf(MarketRent)).call(this, props));
+
+        _this.state = {
+            area: undefined,
+            MarketRent: props.MarketRent
+        };
+        _this.handleChange = _this.handleChange.bind(_this);
+
+        return _this;
+    }
+
+    _createClass(MarketRent, [{
+        key: "handleChange",
+        value: function handleChange(event) {
+            this.setState(_defineProperty({}, event.target.name, event.target.value));
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                    "form",
+                    { onSubmit: function onSubmit(e) {
+                            e.preventDefault();_this2.state.MarketRent(_this2.state.area);
+                        } },
+                    _react2.default.createElement("input", { type: "text", name: "area", placeholder: "Area", onChange: this.handleChange }),
+                    _react2.default.createElement(
+                        "button",
+                        { className: "formbtn" },
+                        _react2.default.createElement(
+                            "span",
+                            null,
+                            "Get Market Rent"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return MarketRent;
+}(_react2.default.Component);
+
+exports.default = MarketRent;
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 exports.getMarketRent = getMarketRent;
 
-var _superagent = __webpack_require__(26);
+var _superagent = __webpack_require__(27);
 
 var _superagent2 = _interopRequireDefault(_superagent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function getMarketRent() {
-    console.log("send request");
-    return _superagent2.default.get('/stuff').then(function (res) {
+function getMarketRent(suburbName) {
+    // console.log("send request")
+    return _superagent2.default.get('/areaInfo?suburb=' + suburbName).then(function (res) {
 
-        console.log("got request answer");
+        // console.log("got request answer")
         var marketRent = res.body;
-        console.log('market is :', marketRent);
+        // console.log('market is :', marketRent)
         return marketRent;
     });
 }
@@ -24089,7 +24192,7 @@ function getMarketRent() {
 // }
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -24106,11 +24209,11 @@ if (typeof window !== 'undefined') { // Browser window
   root = this;
 }
 
-var Emitter = __webpack_require__(27);
-var RequestBase = __webpack_require__(28);
+var Emitter = __webpack_require__(28);
+var RequestBase = __webpack_require__(29);
 var isObject = __webpack_require__(5);
-var ResponseBase = __webpack_require__(29);
-var Agent = __webpack_require__(31);
+var ResponseBase = __webpack_require__(30);
+var Agent = __webpack_require__(32);
 
 /**
  * Noop.
@@ -25015,7 +25118,7 @@ request.put = function(url, data, fn) {
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -25184,7 +25287,7 @@ Emitter.prototype.hasListeners = function(event){
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25885,7 +25988,7 @@ RequestBase.prototype._setTimeouts = function() {
 
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25895,7 +25998,7 @@ RequestBase.prototype._setTimeouts = function() {
  * Module dependencies.
  */
 
-var utils = __webpack_require__(30);
+var utils = __webpack_require__(31);
 
 /**
  * Expose `ResponseBase`.
@@ -26026,7 +26129,7 @@ ResponseBase.prototype._setStatusProperties = function(status){
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26104,7 +26207,7 @@ exports.cleanHeader = function(header, changesOrigin){
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 function Agent() {
@@ -26128,87 +26231,6 @@ Agent.prototype._setDefaults = function(req) {
 
 module.exports = Agent;
 
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var MarketRent = function (_React$Component) {
-    _inherits(MarketRent, _React$Component);
-
-    function MarketRent(props) {
-        _classCallCheck(this, MarketRent);
-
-        var _this = _possibleConstructorReturn(this, (MarketRent.__proto__ || Object.getPrototypeOf(MarketRent)).call(this, props));
-
-        _this.state = {
-            area: undefined
-        };
-        _this.handleChange = _this.handleChange.bind(_this);
-
-        return _this;
-    }
-
-    _createClass(MarketRent, [{
-        key: "handleChange",
-        value: function handleChange(event) {
-            this.setState(_defineProperty({}, event.target.name, event.target.value));
-        }
-    }, {
-        key: "render",
-        value: function render() {
-            var _this2 = this;
-
-            return _react2.default.createElement(
-                "div",
-                null,
-                _react2.default.createElement(
-                    "form",
-                    { onSubmit: function onSubmit(e) {
-                            e.preventDefault();_this2.props.MarketRent(_this2.state.area);
-                        } },
-                    _react2.default.createElement("input", { type: "text", name: "area", placeholder: "Area", onChange: this.handleChange }),
-                    _react2.default.createElement(
-                        "button",
-                        { className: "formbtn" },
-                        _react2.default.createElement(
-                            "span",
-                            null,
-                            "Get Market Rent"
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return MarketRent;
-}(_react2.default.Component);
-
-exports.default = MarketRent;
 
 /***/ })
 /******/ ]);
