@@ -21,7 +21,7 @@ server.use(express.static(path.join(__dirname, './public')))
 // Routes
 
 server.get("/areaInfo", (req,res) => {
-
+// db.getInfo().then(data => res.json(data))
      console.log("sending to MBIE");
     let suburb = req.query.suburb;
 
