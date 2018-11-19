@@ -33,20 +33,20 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "knex": "^0.15.2",
-    "nodemon": "^1.18.3",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
-    "sqlite3": "^4.0.2"
-  },
-  "devDependencies": {
+    "sqlite3": "^4.0.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
     "cheerio": "0.22.0",
     "jest": "^23.5",
-    "supertest": "^3.1.0",
-    "webpack": "^3.10.0"
+    "nodemon": "^1.18.3",
+    "supertest": "^3.1.0"
   }
 }
