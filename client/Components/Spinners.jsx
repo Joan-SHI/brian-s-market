@@ -2,6 +2,7 @@ import React from 'react';
 import { css } from 'react-emotion';
 import { ClimbingBoxLoader } from 'react-spinners';
 
+
 const override = css`
     display: block;
     margin: 0 auto;
@@ -21,9 +22,9 @@ class SpinnersComponent extends React.Component {
             <div className='sweet-loading'>
                 <ClimbingBoxLoader
                     className={override}
-                    sizeUnit={"int"}
+                    sizeUnit={"px"}
                     size={15}
-                    color={'F5A623'}
+                    color={'#F5A623'}
                     loading={this.state.loading}
                 />
             </div>

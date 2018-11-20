@@ -35,7 +35,7 @@ server.get("/areaInfo", (req,res) => {
             res.send(marketRent)
         })
 
-        // res.send("partially working")
+        
 })
 
 
@@ -67,29 +67,12 @@ function createApiCallUrl(suburb){
     let area = "area-labels=" + suburb;
     url += "&" + area
 
-    // console.log("the request being sent is "+url)
+    
 
     return url;
 }
 
 
-//https://api.business.govt.nz/services/v1/tenancy-services/market-rent/statistics?period-ending=2018-06&num-months=24&area-definition=AU2016&include-aggregates=false&dwelling-type=House&num-bedrooms=3&area-codes=574401
 
-
-// export function getMarketRent () {
-//     return request.get(marketRentUrl).set('Authorization', 'Bearer ' + token)
-//     .then(res => {
-//         let marketRent = res.body
-//         console.log('market is :', marketRent)
-//         return marketRent
-//     })
-// 
-
-
-
-
-
-
-// server.use('/', userRoutes)
 
 module.exports = server

@@ -16,7 +16,7 @@ class App extends React.Component {
     this.state = {
       showMarket: false,
       rentPrice: "___",
-      loading: true,
+      loading: false,
     color: '#000000',
     className: ''
      }
@@ -87,7 +87,7 @@ class App extends React.Component {
         <Table />
         <h2>The Market Rent Rate Is {this.state.rentPrice}</h2>
         {!this.state.loading && <MarketRent MarketRent={this.updateMarketRent} />}
-        {this.state.loading && <Spinners />}
+        {this.state.loading && <SpinnersComponent />}
         <Guide />
         <Marketinfo click={this.handleClick} />
         {this.state.showMarket &&
