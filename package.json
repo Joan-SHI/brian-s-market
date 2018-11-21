@@ -15,7 +15,8 @@
       "react"
     ],
     "plugins": [
-      "transform-class-properties"
+      "transform-class-properties",
+      "emotion"
     ]
   },
   "repository": {
@@ -40,6 +41,7 @@
     "knex": "^0.15.2",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
+    "react-spinners": "^0.4.7",
     "sqlite3": "^4.0.2",
     "superagent": "^4.0.0",
     "webpack": "^3.10.0"

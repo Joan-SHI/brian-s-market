@@ -2,9 +2,9 @@ import React from 'react'
 
 const Market = () => {
   return (<div >
-    <h1>Market</h1>
-    <p>If rate is positive, charge tennants more</p>
-    <p>If negative, you're already profiting</p>
+    <h1>Market Rent</h1>
+    <p>If bank rate increases, charge tennants more</p>
+    <p>If bank rate decreases, you're already profiting</p>
     </div>
   )
 }
