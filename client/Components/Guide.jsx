@@ -2,12 +2,12 @@ import React from 'react'
 
 const Guide = () => {
   return (<div>
-    <h1>Guide</h1>
+    <h2>Moon's Today</h2>
     <ul>
-      <li>Bank Rate</li>
-      <li>The rate of house price change</li>
-      <li>Income rate of change</li>
-      <li>Population growth rate</li>
+      <li>Weather</li>
+      <li>News</li>
+      <li>Jobs</li>
+      <li>Education</li>
     </ul>
     
     </div>

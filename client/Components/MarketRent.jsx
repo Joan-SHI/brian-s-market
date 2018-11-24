@@ -20,7 +20,7 @@ render() {
         <div>
           <form onSubmit={(e) => {e.preventDefault(); this.state.MarketRent(this.state.area)}}>
           <input type="text" name="area" placeholder="Area" onChange={this.handleChange} />
-          <button className="formbtn"><span>Get Market Rent</span></button>
+          <button className="formbtn" class="btn btn-warning"><span >Get Today's Rent</span></button>
           </form>
         </div>
     )

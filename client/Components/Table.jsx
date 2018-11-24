@@ -8,29 +8,29 @@ const Table = () => {
     <tr>
       <th scope="col">Area</th>
       <th scope="col">Rent</th> 
-      <th scope="col">Bank Rate</th>
-      <th scope="col">Influence</th>
+      <th scope="col">dwelling type</th>
+      <th scope="col">flatmates Allowed</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>Wadestown</td>
-      <td>555</td>
-      <td>--</td>
-      <td>--</td>
+      <td>Ngaio School</td>
+      <td>2 penciles</td>
+      <td>bunks</td>
+      <td>4</td>
 
     </tr>
     <tr>
-      <td>Raroa</td>
-      <td>520</td>
-      <td>--</td>
-      <td>--</td>
+      <td>Khandallah School</td>
+      <td>3 marbles</td>
+      <td>tents</td>
+      <td>7</td>
     </tr>
     <tr>
-      <td>Kelburn</td>
-      <td>633</td>
-      <td>--</td>
-      <td>--</td>
+      <td>Kaori Normal School</td>
+      <td>a hug</td>
+      <td>On Floor</td>
+      <td>unlimited</td>
     </tr>
    
     </tbody>

@@ -51,27 +51,11 @@ class App extends React.Component {
           })
 
         }
-        // console.log(marketRent.items)
-
-        // this.setState({
-        //   rentPrice: marketRent.items.med
-        // })
+        
       })
   }
 
-  componentDidMount() {
-    // getMarketRent()
-    //   .then(marketRent => {
-    //     console.log('marketRent is', marketRent)
-
-    //     // TODO this.setState
-    //     this.setState({
-    //       error: err,
-    //       marketRent: {}
-
-    //     })
-    //   })
-  }
+  
 
   handleClick() {
     this.setState({
@@ -85,7 +69,7 @@ class App extends React.Component {
         <Nav />
         <Header />
         <Table />
-        <h2>The Market Rent Rate Is {this.state.rentPrice}</h2>
+        <h2>Today's Rent Is {this.state.rentPrice}</h2>
         {!this.state.loading && <MarketRent MarketRent={this.updateMarketRent} />}
         {this.state.loading && <SpinnersComponent />}
         <Guide />

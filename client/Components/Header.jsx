@@ -3,7 +3,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <h1 class=" text-center">Rate To Rent</h1>
+    <h1 class=" text-center">Today's Rent</h1>
   )
 }
 
