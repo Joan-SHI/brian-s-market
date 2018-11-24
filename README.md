@@ -1,20 +1,8 @@
-# Joans Personal Project
+# Brian's Market
 
 Goal:
-Use
- - Express
- - Knex
- - Database
- - SQLite3
- - React
- - API
- in my personal project so I have better understanding about them. This project will show Wellingtian landlords and tenants how the bank rates influences the market rent so they can make decisions more rationally and have a happy ending:) 
 
-To do:
+From an ordinary mum to a fantastic magician in Brian's eyes.
 
-Explore React;
-Once I get my API approvals from MBIE and ASB, apply them in database.
-
-Strectch Goal:
-Read some articles about the factors which affect Market-rent. To see whehter I could introduce more types of API into database. 
-
+Story:
+Brian wants his the very first Market App so he can define the area(eg his school),rent type(eg marbles),favorite flatmate(Elise?) etc. He chooses PacmanLoader as his favorite loading spinner. Joan is working hard to make his dream come true. This will be his 6-year-old birthday present in Dec. 2018.
